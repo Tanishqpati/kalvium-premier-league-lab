@@ -5,6 +5,11 @@ let currentTeam = "Manchester FC";
 let trophiesWon = 27;
 
 //Write your function here
+// let Manager = new Array(managerName, managerAge, currentTeam, trophiesWon);
+function createManager(a,b,c,d){
+  return [a,b,c,d];
+}
+
 
 // Don't edit the following code
 try {
@@ -22,6 +27,18 @@ try {
 var formation = [4, 4, 3];
 
 //write your function here
+function createFormation(g){
+  if(g.length==0){
+    return null;
+  }
+  else{
+  return {
+    defender:g[0],
+    midfield:g[1],
+    forward:g[2]
+  };
+}
+}
 
 // Dont edit the following code
 
@@ -32,12 +49,47 @@ try {
 }
 
 //Progression 3 - Filter players that debuted in ___ year
+function filterByDebut(year){
+  let arr = []
+  players.forEach(function(player){
+    if(player.debut==year){
+      arr.push(player);
+    }
+  })
+  return arr;
+}
 
 //Progression 4 - Filter players that play at the position _______
+function filterByPosition(position){
+  let arr=[];
+  players.forEach(function(player){
+    if(player.position==position){
+      arr.push(player)
+    }
+  })
+  return arr;
+}
 
 //Progression 5 - Filter players that have won ______ award
+function filterByAward(awardName){
+  let arr=[];
+  players.forEach(function(player){
+    player.awards.forEach(function(award){
+      if(award.name==awardName){
+        arr.push(player)
+      }
+    })
+  })
+  return arr;
+}
 
 //Progression 6 - Filter players that won ______ award ____ times
+function filterByAwardxTimes(awardName, noOfTimes){
+  let arr=[];
+  players.forEach(function(player){
+    
+  })
+}
 
 //Progression 7 - Filter players that won ______ award and belong to ______ country
 
